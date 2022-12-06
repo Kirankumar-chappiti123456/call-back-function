@@ -1,0 +1,15 @@
+#include<stdio.h>
+int add(int a,int b)
+{
+    printf("add function%d\n",a+b);
+    return a+b;
+}
+int callback(int (*ptr)(int ,int))
+{
+    printf("callback function%d\n",ptr(3,4));
+}
+int main()
+{
+    int (*ptr)(int ,int)=&add;
+    callback(ptr);
+}
